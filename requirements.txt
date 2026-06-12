@@ -1,3 +1,6 @@
 streamlit
 pypdf
 plotly
+openai
+anthropic
+>>>>>>> d4a1a78 (feat: integrate local ollama and BYOK settings panel)
