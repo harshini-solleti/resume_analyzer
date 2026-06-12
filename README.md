@@ -1,50 +1,61 @@
 # Resume Analyzer
 
-## Name
+### Name
 
 Resume Analyzer
 
-## Description
+### Description
 
-Resume Analyzer is an application designed to help job seekers check and optimize their resumes for Applicant Tracking Systems (ATS). Users can drop a PDF file into the app, and it extracts text data to evaluate formatting, composition, and completeness.
+Resume Analyzer is an intelligent web application designed to help job seekers evaluate and optimize their resumes for Applicant Tracking Systems (ATS). Users can drop a PDF file into the application to extract text data, evaluate formatting completeness, identify key technical keywords, and leverage advanced AI inference models to rewrite and polish weak resume phrases.
 
 ### Features
 
-* **PDF Upload Engine:** Processes raw file text on submission.
-* **Structural Checklists:** Verifies the presence of Contact Information, Education, Skills, Projects, Experience, and Certifications sections.
-* **Scoring Dashboard:** Generates an overall quantitative rating (e.g., 82/100) alongside key counts like word frequency and matching skills.
-* **Actionable Suggestions:** Highlights missing elements, page-length warnings, and prompts users to convert passive descriptions into measurable achievements.
+* **PDF Upload Engine**: Instantly extracts and processes raw text from single or multi-page PDF documents on submission.
+* **Structural Checklists**: Verifies the presence of crucial quadrants including Contact Information, Education, Skills, Projects, Experience, Certifications, and Achievements.
+* **Scoring Dashboard**: Renders a real-time visual gauge displaying an overall quantitative rating out of 100 alongside exact word counts and found keywords.
+* **Multilingual Support**: Supports comprehensive parsing and UI localization for **English**, **Telugu (తెలుగు)**, and **Hindi (हिंदी)**.
+* **Hybrid AI Inference Engine**:
+* **Local AI Inference**: Connects seamlessly with local LLM frameworks like **Ollama** for secure, private, offline resume text generation and optimization.
+* **Bring Your Own Key (BYOK)**: Flexible cloud configuration allowing users to input their own API tokens to route tasks to global proprietary AI backends.
 
-## Badges
 
-## Visuals
+* **Actionable Suggestions**: Flags missing blocks, warns users about suboptimal word limits, and generates specific tips to convert passive statements into measurable achievements.
+
+### Badges
+
+### Visuals
 
 ```text
-Resume Strength Score
-████████░░ 82/100
+Language Selected: [ 🌐 English | తెలుగు | हिंदी ]
+
+Resume Strength Score ████████░░ 82/100
 
 [⚠️ Missing Sections]
-- Certifications
+- Certifications / Achievements
 
 [💡 Suggestions]
-- Add more technical skills.
-- Include measurable achievements.
-- Keep resume under one page.
+- Add more technical focus skills.
+- Include measurable achievements using the STAR method.
+- Keep resume under 800 words for optimal density screening.
+
+[🤖 AI Assistant (Local Ollama / BYOK)]
+👉 "Rewrote: 'Responsible for code' ➔ 'Architected modular Python backend pipelines improving scalability by 35%'"
 
 ```
 
-## Installation
+### Installation
 
-### Requirements
+#### Requirements
 
-* Node.js (v18 or higher) OR Python 3.9+
-* Browser support for drag-and-drop file upload interfaces
+* Python 3.9 or higher
+* Ollama (Optional, required only for local offline AI inference configurations)
+* A modern web browser with support for drag-and-drop file upload interfaces
 
-### Setup Steps
+#### Setup Steps
 
 1. Clone the repository to your environment:
 ```bash
-git clone [https://code.swecha.org/apravallika/resume-analyzer.git](https://code.swecha.org/apravallika/resume-analyzer.git)
+git clone https://code.swecha.org/apravallika/resume-analyzer.git
 cd resume-analyzer
 
 ```
@@ -52,42 +63,43 @@ cd resume-analyzer
 
 2. Install the necessary project libraries:
 ```bash
-# If using npm
-npm install
-
-# If using python
 pip install -r requirements.txt
 
 ```
 
 
-
-## Usage
-
-Run the script or development server using your environment's runtime command:
-
+3. *(Optional)* If using local AI inference, ensure Ollama is installed and running on your system, then pull your preferred model (e.g., Llama3 or Mistral):
 ```bash
-# Frontend/Node environment
-npm run dev
-
-# Backend/Python environment
-python app.py
+ollama run llama3
 
 ```
 
-Open your local port in a browser, drag a standard single-page or multi-page resume PDF into the analyzer zone, and review the structural breakdown, keyword match lists, and optimization recommendations.
 
-## Support
 
-For bugs, feature requests, or parsing discrepancies, please open an issue tracking ticket inside the [GitLab Issues dashboard](https://www.google.com/search?q=https://code.swecha.org/apravallika/resume-analyzer/-/issues).
+### Usage
 
-## Roadmap
+Run the application development server using your environment's runtime command:
 
-* [ ] Implement deep structural paragraph parsing using regex matching arrays.
-* [ ] Integrate a live progress gauge element to animate scoring adjustments.
-* [ ] Add a text-generation feature to instantly rewrite static phrases into impact-focused data metrics.
+```bash
+streamlit run app.py
 
-## Contributing
+```
+
+Open your local port in a browser (typically `http://localhost:8501`), select your preferred workspace language, toggle your chosen AI routing configuration (Local Ollama or input your cloud token via the BYOK panel), drag a standard resume PDF into the analyzer zone, and review the structural breakdown, keyword match lists, and optimization recommendations.
+
+### Support
+
+For bugs, feature requests, or parsing discrepancies, please open an issue tracking ticket inside the GitLab Issues dashboard.
+
+### Roadmap
+
+* [x] Implement deep structural paragraph parsing using regex matching arrays.
+* [x] Integrate a live progress gauge element to animate scoring adjustments.
+* [x] Support full multilingual localization (English, Telugu, Hindi).
+* [x] Deploy a local AI framework (Ollama) and cloud BYOK token gateway.
+* [ ] Add text-generation features to instantly rewrite static phrases into impact-focused data metrics.
+
+### Contributing
 
 We welcome project adjustments, bug fixes, and parsing engine optimizations.
 
@@ -95,22 +107,15 @@ We welcome project adjustments, bug fixes, and parsing engine optimizations.
 2. Branch out your workspace (`git checkout -b feature/NewFeature`).
 3. Commit structural modifications (`git commit -m 'Add NewFeature parsing module'`).
 4. Push to your working branch (`git push origin feature/NewFeature`).
-5. File a fresh **Merge Request** back to the primary branch.
+5. File a fresh Merge Request back to the primary branch.
 
-## Authors and acknowledgment
+### Authors and acknowledgment
 
-* **A. Pravallika** - *Team Member 1* - [@apravallika](https://www.google.com/search?q=https://code.swecha.org/apravallika)
-* **Sri Harshini** - *Team Member 2* - [@sriharshini2901](https://www.google.com/search?q=https://code.swecha.org/apravallika)
-* Thank you to all contributors and open-source file-parsing project teams who provided baseline data extraction tooling.
+* **A. Pravallika** - Team Member 1 - [@apravallika](https://www.google.com/search?q=https://code.swecha.org/apravallika)
+* **Sri Harshini** - Team Member 2 - [@sriharshini2901](https://www.google.com/search?q=https://code.swecha.org/sriharshini2901)
 
-## License
+Thank you to all contributors, Swecha mentors, and open-source file-parsing project teams who provided baseline data extraction tooling.
 
-This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-## Project status
-
-Active development. Current milestones focus on polishing core parsing regex logic and fixing file submission constraints.
-
-```
-
-```
+### Project status
+**Completed / Production Ready.** Core development milestones—including multi-language expansion (English, Telugu, Hindi), local/cloud AI routing adapters, and text extraction regex matrices—have been fully deployed and verified.
